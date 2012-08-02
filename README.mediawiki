@@ -2,22 +2,29 @@
 : FelixSlider는 이미지 슬라이더로 jQuery의 플러그인입니다.
 
 == Usage ==
+==== HTML ====
 <pre>
-	<ul id="slider">
-		<li>
-			<img src="http://www.agentsdata.com.au/data/21/539/2577.jpg" width="120" height="80" />
-		</li>
-		<li>
-			<img src="http://www.agentsdata.com.au/data/21/539/2578.jpg" width="120" height="80" />
-		</li>
-		<li>
-			<img src="http://www.agentsdata.com.au/data/21/539/2579.jpg" width="120" height="80" />
-		</li>
-		<li>
-			<img src="http://www.agentsdata.com.au/data/21/539/2580.jpg" width="120" height="80" />
-		</li>
-		<li>
-			<img src="http://www.agentsdata.com.au/data/21/539/2581.jpg" width="120" height="80" />
-		</li>
-	</ul>
+<ul id="slider">
+	<li>
+		<img src="http://www.agentsdata.com.au/data/21/539/2577.jpg" width="120" height="80" />
+	</li>
+	<li>
+		<img src="http://www.agentsdata.com.au/data/21/539/2578.jpg" width="120" height="80" />
+	</li>
+	<li>
+		<img src="http://www.agentsdata.com.au/data/21/539/2579.jpg" width="120" height="80" />
+	</li>
+	<li>
+		<img src="http://www.agentsdata.com.au/data/21/539/2580.jpg" width="120" height="80" />
+	</li>
+	<li>
+		<img src="http://www.agentsdata.com.au/data/21/539/2581.jpg" width="120" height="80" />
+	</li>
+</ul>
+</pre>
+
+==== Javascript ====
+기본 생성
+<pre>
+$('#slider').felixSlider();
 </pre>
