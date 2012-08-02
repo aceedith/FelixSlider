@@ -66,7 +66,7 @@
 						left: '200px',
 						backgroundColor: '#FFF',
 						border: '1px solid gray',
-						overflow: 'scroll',
+						overflow: 'auto',
 						padding: 0,
 						margin: 0
 					}
@@ -149,7 +149,7 @@
 				var ul = $(target).find('.felix-ul');
 				var moveTo = '-=' + this._interval;
 
-				this.log('pre go');
+				this.log('next go');
 				this.log('cursor: ' + this._cursor);
 				this.log('interval: ' + this._interval);
 
@@ -189,6 +189,8 @@
 			var targetHeight = 0;
 			var imagesWidth = 0;
 			var imagesHeight = 0;
+			var imageWidth = 0;
+			var imageHeight = 0;
 
 			if(settings.direction == 'H'){
 				li.addClass('felix-float');
@@ -196,6 +198,8 @@
 				imagesBoxHeight = image.height();
 				imagesWidth = (image.width() * li.length) + (li.length * settings.padding) * 2;
 				imagesHeight = imagesBoxHeight;
+				imageWidth = image.width();
+				imageHeight = image.height();
 				if(!settings.preHtml){
 					preButton.html('pre');
 					preButton.css({
@@ -217,6 +221,8 @@
 					});
 				}
 				li.css({
+					width: imageWidth,
+					height: imageHeight,
 					paddingTop: 0,
 					paddingRight: settings.padding,
 					paddingBottom: 0,
@@ -236,6 +242,8 @@
 				imagesBoxHeight = (image.height() * settings.showImageCount) + (settings.showImageCount * settings.padding) * 2;
 				imagesWidth = imagesBoxWidth;
 				imagesHeight = (image.height() * li.length) + (li.length * settings.padding) * 2;
+				imageWidth = image.width();
+				imageHeight = image.height();
 				if(!settings.preHtml){
 					preButton.html('pre');
 					preButton.css({
@@ -257,6 +265,8 @@
 					});
 				}
 				li.css({
+					width: imageWidth,
+					height: imageHeight,
 					paddingTop: settings.padding,
 					paddingRight: 0,
 					paddingBottom: settings.padding,
@@ -273,18 +283,10 @@
 			}
 
 			$(target).css({
-				border: '0px solid green',
 				width: targetWidth,
 				height: targetHeight
 			});
-			preButton.css({
-				border: '0px solid green'
-			});
-			nextButton.css({
-				border: '0px solid green'
-			});
 			imagesBox.css({
-				border: '0px solid blue',
 				width: imagesBoxWidth,
 				height: imagesBoxHeight
 			});
@@ -292,15 +294,8 @@
 			li.addClass('felix-li');
 			li.find('img').addClass('felix-img');
 			ul.css({
-				border: '0px solid black',
 				width: imagesWidth,
 				height: imagesHeight
-			});
-			li.css({
-				border: '0px solid red'
-			});
-			li.find('img').css({
-				border: '0px solid blue'
 			});
 		},
 		_wrapping: function (target, settings){
