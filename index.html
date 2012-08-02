@@ -1,0 +1,50 @@
+<html>
+<head>
+	<title>Image Slider</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.felixSlider.js"></script>
+	<link rel="stylesheet" href="css/jquery.felixSlider.css">
+	<script type="text/javascript">
+		$(function (){
+			$('#slider').felixSlider({
+				direction: 'H', // image listing direction V : Vertical, H : Horizental
+				showImageCount: 5, // image view count
+				padding: 2, // padding
+				preClick: null, // function (state) {} : state is success or failure of moving
+				nextClick: null, // function (state) {} : state is success or failure of moving
+				imageClick: null, // function (target) {} : target is clicked image
+				preHtml: null, // preButton design html
+				nextHtml: null, // nextButton design html
+				intervalType: 'show' // 'show' is to move imagesBox, 'image' is to move one image.
+			});
+			
+			$('#slider').felixSlider('option', 'direction', 'V');
+			$('#slider').felixSlider('option', 'padding', 30);
+			$('#slider').felixSlider('option', 'showImageCount', 2);
+			$('#slider').felixSlider('option', 'intervalType', 'image');
+
+			// felixSlider destroy method
+			// $('#slider').felixSlider('destroy');
+		});
+	</script>
+</head>
+<body>
+	<ul id="slider">
+		<li>
+			<img src="http://www.agentsdata.com.au/data/21/539/2577.jpg" width="120" height="80" />
+		</li>
+		<li>
+			<img src="http://www.agentsdata.com.au/data/21/539/2578.jpg" width="120" height="80" />
+		</li>
+		<li>
+			<img src="http://www.agentsdata.com.au/data/21/539/2579.jpg" width="120" height="80" />
+		</li>
+		<li>
+			<img src="http://www.agentsdata.com.au/data/21/539/2580.jpg" width="120" height="80" />
+		</li>
+		<li>
+			<img src="http://www.agentsdata.com.au/data/21/539/2581.jpg" width="120" height="80" />
+		</li>
+	</ul>
+</body>
+</html>

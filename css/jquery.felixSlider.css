@@ -1,0 +1,47 @@
+.felix-images-box
+{
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+.felix-button
+{
+	cursor: pointer;
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+.felix-pre-button
+{
+}
+.felix-next-button
+{
+}
+.felix-images-box
+{
+	position: relative;
+	overflow: hidden;
+	text-align: left;
+	margin: 0;
+	padding: 0;
+	float: left;
+}
+.felix-ul
+{
+	position: relative;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+}
+.felix-li
+{
+	list-style-type: none;
+}
+.felix-img
+{
+	cursor: pointer;
+}
+.felix-float
+{
+	float: left;
+}
