@@ -1,5 +1,5 @@
 = FelixSlider =
-: FelixSlider는 이미지 슬라이더로 jQuery의 플러그인입니다.
+: FelixSlider is image slider plug-in of jQuery.
 
 == Usage ==
 ==== HTML ====
@@ -24,7 +24,35 @@
 </pre>
 
 ==== Javascript ====
-기본 생성
+Applying
 <pre>
 $('#slider').felixSlider();
+</pre>
+
+Applying by options
+<pre>
+$('#slider').felixSlider({
+	direction: 'H', // image listing direction V : Vertical, H : Horizental
+	showImageCount: 5, // image view count
+	padding: 2, // padding
+	preClick: null, // function (state) {} : state is success or failure of moving
+	nextClick: null, // function (state) {} : state is success or failure of moving
+	imageClick: null, // function (target) {} : target is clicked image
+	preHtml: null, // preButton design html
+	nextHtml: null, // nextButton design html
+	intervalType: 'show' // 'show' is to move imagesBox, 'image' is to move one image.
+});
+</pre>
+
+Changing option
+<pre>
+$('#slider').felixSlider('option', 'direction', 'V');
+$('#slider').felixSlider('option', 'padding', 30);
+$('#slider').felixSlider('option', 'showImageCount', 2);
+$('#slider').felixSlider('option', 'intervalType', 'image');
+</pre>
+
+Method
+<pre>
+$('#slider').felixSlider('destroy'); // Destroying FelixSlider
 </pre>
