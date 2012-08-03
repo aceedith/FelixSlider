@@ -9,12 +9,14 @@
 		this.director = director;
 		this.version = version;
 		this._curInst = null;
-		this._cursor = 1;
-		this._interval = 0;
 		this._method = {
 			destroy: true
 		};
 		this._defaults = {
+			_cursor: 1,
+			_interval: 0,
+			auto: false,
+			interval: 500,
 			direction: 'H', // image listing direction V : Vertical, H : Horizental
 			showImageCount: 5, // image view count
 			padding: 2, // padding
@@ -55,7 +57,7 @@
 		_attachFelixSlider: function (target, settingsArgs){
 			$.felixSlider.log(this.debug);
 
-			if(this.debug){
+			if(this.debug && $('#sliderLogDiv').length == 0){
 				var logDiv = $('<div />', {
 					id: 'sliderLogDiv',
 					css: {
@@ -87,7 +89,7 @@
 			inst.settings = $.extend({}, this._defaults, settingsArgs);
 
 			var slider = this._wrapping(target, inst.settings);
-			$.data(slider, PROP_NAME, inst);
+			$.data(target, PROP_NAME, inst);
 
 			this._cssSettings(slider, inst.settings);
 			this._eventsSettings(slider, inst.settings);
@@ -112,14 +114,14 @@
 		},
 		_preClick: function (target, settings){
 			var state = false;
-			if(this._cursor > 1){
+			if(settings._cursor > 1){
 
 				var ul = $(target).find('.felix-ul');
-				var moveTo = '+=' + this._interval;
+				var moveTo = '+=' + settings._interval;
 
 				this.log('pre go');
-				this.log('cursor: ' + this._cursor);
-				this.log('interval: ' + this._interval);
+				this.log('cursor: ' + settings._cursor);
+				this.log('interval: ' + settings._interval);
 
 				if(settings.direction == 'H'){
 					ul.animate({
@@ -132,7 +134,7 @@
 					}, 'slow');
 				}
 				
-				this._cursor--;
+				settings._cursor--;
 				state = true;
 			}
 			if(settings.preClick){
@@ -144,14 +146,14 @@
 			var imageCount = $(target).find('img').length;
 			var maxCursor = (settings.intervalType == 'show') ? Math.round(imageCount / settings.showImageCount) : imageCount;
 
-			if(this._cursor < maxCursor){
+			if(settings._cursor < maxCursor){
 				
 				var ul = $(target).find('.felix-ul');
-				var moveTo = '-=' + this._interval;
+				var moveTo = '-=' + settings._interval;
 
 				this.log('next go');
-				this.log('cursor: ' + this._cursor);
-				this.log('interval: ' + this._interval);
+				this.log('cursor: ' + settings._cursor);
+				this.log('interval: ' + settings._interval);
 
 				if(settings.direction == 'H'){
 					ul.animate({
@@ -164,7 +166,7 @@
 					}, 'slow');
 				}
 				
-				this._cursor++;
+				settings._cursor++;
 				state = true;
 			}
 			if(settings.nextClick){
@@ -231,10 +233,10 @@
 				targetWidth = imagesBoxWidth + preButton.width() + nextButton.width();
 				targetHeight = imagesBoxHeight;
 				if(settings.intervalType == 'show'){
-					this._interval = imagesBoxWidth;
+					settings._interval = imagesBoxWidth;
 				}
 				else if(settings.intervalType == 'image'){
-					this._interval = image.width() + settings.padding * 2;
+					settings._interval = image.width() + settings.padding * 2;
 				}
 			}
 			else if(settings.direction == 'V'){
@@ -275,10 +277,10 @@
 				targetWidth = imagesBoxWidth;
 				targetHeight = imagesBoxHeight + preButton.height() + nextButton.height();
 				if(settings.intervalType == 'show'){
-					this._interval = imagesBoxHeight;
+					settings._interval = imagesBoxHeight;
 				}
 				else if(settings.intervalType == 'image'){
-					this._interval = image.height() + settings.padding * 2;
+					settings._interval = image.height() + settings.padding * 2;
 				}
 			}
 
@@ -300,7 +302,7 @@
 		},
 		_wrapping: function (target, settings){
 			$(target).wrap('<div class="felix-slider"><div class="felix-images-box"></div></div>');
-			var wrapper = $('.felix-slider');
+			var wrapper = $(target).parent().parent();
 			wrapper.prepend('<div class="felix-button felix-pre-button"></div>');
 			wrapper.append('<div class="felix-button felix-next-button"></div>');
 
@@ -314,7 +316,7 @@
 		},
 		_optionFelixSlider: function (target, name, value){
 			var slider = $(target).parent().parent().get(0);
-			var inst = this._getInst(slider);
+			var inst = this._getInst(target);
 			
 			if(!inst){
 				return false;

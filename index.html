@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="css/felixSlider.css">
 	<script type="text/javascript">
 		$(function (){
-			$('#slider').felixSlider({
+			$('#slider1').felixSlider({
 				direction: 'H', // image listing direction V : Vertical, H : Horizental
 				showImageCount: 5, // image view count
 				padding: 2, // padding
@@ -18,18 +18,125 @@
 				intervalType: 'show' // 'show' is to move imagesBox, 'image' is to move one image.
 			});
 			
-			$('#slider').felixSlider('option', 'direction', 'V');
-			$('#slider').felixSlider('option', 'padding', 10);
-			$('#slider').felixSlider('option', 'showImageCount', 3);
-			$('#slider').felixSlider('option', 'intervalType', 'image');
+			$('#slider2').felixSlider({
+				direction: 'H', // image listing direction V : Vertical, H : Horizental
+				showImageCount: 5, // image view count
+				padding: 2, // padding
+				preClick: null, // function (state) {} : state is success or failure of moving
+				nextClick: null, // function (state) {} : state is success or failure of moving
+				imageClick: null, // function (target) {} : target is clicked image
+				preHtml: null, // preButton design html
+				nextHtml: null, // nextButton design html
+				intervalType: 'image' // 'show' is to move imagesBox, 'image' is to move one image.
+			});
+
+			$('#slider3').felixSlider({
+				direction: 'V', // image listing direction V : Vertical, H : Horizental
+				showImageCount: 5, // image view count
+				padding: 2, // padding
+				preClick: null, // function (state) {} : state is success or failure of moving
+				nextClick: null, // function (state) {} : state is success or failure of moving
+				imageClick: null, // function (target) {} : target is clicked image
+				preHtml: null, // preButton design html
+				nextHtml: null, // nextButton design html
+				intervalType: 'show' // 'show' is to move imagesBox, 'image' is to move one image.
+			});
 
 			// felixSlider destroy method
-			// $('#slider').felixSlider('destroy');
+			// $('#slider1').felixSlider('destroy');
 		});
 	</script>
 </head>
 <body>
-	<ul id="slider">
+	<ul id="slider1">
+		<li>
+			<img src="http://www.imagegood.co.kr/web_small/25/20120512153006.jpg" width="150" height="100" />
+		</li>
+		<li>
+			<img src="http://www.imagegood.co.kr/web_small/27/20120512154201.jpg" width="150" height="100" />
+		</li>
+		<li>
+			<img src="http://www.imagegood.co.kr/web_small/25/20120512152933.jpg" width="150" height="100" />
+		</li>
+		<li>
+			<img src="http://www.imagegood.co.kr/web_small/10/20111215063636.jpg" width="150" height="100" />
+		</li>
+		<li>
+			<img src="http://www.imagegood.co.kr/web_small/38/20111207075807.jpg" width="150" height="100" />
+		</li>
+		<li>
+			<img src="http://www.imagegood.co.kr/web_small/9/20111207075543.jpg" width="150" height="100" />
+		</li>
+		<li>
+			<img src="http://www.imagegood.co.kr/web_small/38/20111207074600.jpg" width="150" height="100" />
+		</li>
+		<li>
+			<img src="http://www.imagegood.co.kr/web_small/38/20111207074039.jpg" width="150" height="100" />
+		</li>
+		<li>
+			<img src="http://www.imagegood.co.kr/web_small/13/20111207073337.jpg" width="150" height="100" />
+		</li>
+		<li>
+			<img src="http://www.imagegood.co.kr/web_small/38/20111207072818.jpg" width="150" height="100" />
+		</li>
+		<li>
+			<img src="http://www.imagegood.co.kr/web_small/28/20111129052503.jpg" width="150" height="100" />
+		</li>
+		<li>
+			<img src="http://www.imagegood.co.kr/web_small/26/20111124003350.jpg" width="150" height="100" />
+		</li>
+		<li>
+			<img src="http://www.imagegood.co.kr/web_small/23/20111124001926.jpg" width="150" height="100" />
+		</li>
+		<li>
+			<img src="http://www.imagegood.co.kr/web_small/23/20111124001038.jpg" width="150" height="100" />
+		</li>
+	</ul>
+	<ul id="slider2">
+		<li>
+			<img src="http://www.imagegood.co.kr/web_small/25/20120512153006.jpg" width="150" height="100" />
+		</li>
+		<li>
+			<img src="http://www.imagegood.co.kr/web_small/27/20120512154201.jpg" width="150" height="100" />
+		</li>
+		<li>
+			<img src="http://www.imagegood.co.kr/web_small/25/20120512152933.jpg" width="150" height="100" />
+		</li>
+		<li>
+			<img src="http://www.imagegood.co.kr/web_small/10/20111215063636.jpg" width="150" height="100" />
+		</li>
+		<li>
+			<img src="http://www.imagegood.co.kr/web_small/38/20111207075807.jpg" width="150" height="100" />
+		</li>
+		<li>
+			<img src="http://www.imagegood.co.kr/web_small/9/20111207075543.jpg" width="150" height="100" />
+		</li>
+		<li>
+			<img src="http://www.imagegood.co.kr/web_small/38/20111207074600.jpg" width="150" height="100" />
+		</li>
+		<li>
+			<img src="http://www.imagegood.co.kr/web_small/38/20111207074039.jpg" width="150" height="100" />
+		</li>
+		<li>
+			<img src="http://www.imagegood.co.kr/web_small/13/20111207073337.jpg" width="150" height="100" />
+		</li>
+		<li>
+			<img src="http://www.imagegood.co.kr/web_small/38/20111207072818.jpg" width="150" height="100" />
+		</li>
+		<li>
+			<img src="http://www.imagegood.co.kr/web_small/28/20111129052503.jpg" width="150" height="100" />
+		</li>
+		<li>
+			<img src="http://www.imagegood.co.kr/web_small/26/20111124003350.jpg" width="150" height="100" />
+		</li>
+		<li>
+			<img src="http://www.imagegood.co.kr/web_small/23/20111124001926.jpg" width="150" height="100" />
+		</li>
+		<li>
+			<img src="http://www.imagegood.co.kr/web_small/23/20111124001038.jpg" width="150" height="100" />
+		</li>
+	</ul>
+	<ul id="slider3">
 		<li>
 			<img src="http://www.imagegood.co.kr/web_small/25/20120512153006.jpg" width="150" height="100" />
 		</li>
