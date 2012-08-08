@@ -1,7 +1,10 @@
 $(function (){
 	prettyPrint();
 
-	$('#slider1').felixSlider();
+	$('#slider1').felixSlider({
+		auto: true,
+		rolling: true
+	});
 
 	$('#example1').felixSlider();
 	$('#example2').felixSlider({
