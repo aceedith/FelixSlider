@@ -1,184 +1,847 @@
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Image Slider</title>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<script type="text/javascript" src="js/felixSlider.js"></script>
-	<link rel="stylesheet" href="css/felixSlider.css">
-	<script type="text/javascript">
-		$(function (){
-			$('#slider1').felixSlider({
-				direction: 'H', // image listing direction V : Vertical, H : Horizental
-				showImageCount: 5, // image view count
-				padding: 2, // padding
-				preClick: null, // function (state) {} : state is success or failure of moving
-				nextClick: null, // function (state) {} : state is success or failure of moving
-				imageClick: null, // function (target) {} : target is clicked image
-				preHtml: null, // preButton design html
-				nextHtml: null, // nextButton design html
-				intervalType: 'show' // 'show' is to move imagesBox, 'image' is to move one image.
-			});
-			
-			$('#slider2').felixSlider({
-				direction: 'H', // image listing direction V : Vertical, H : Horizental
-				showImageCount: 5, // image view count
-				padding: 2, // padding
-				preClick: null, // function (state) {} : state is success or failure of moving
-				nextClick: null, // function (state) {} : state is success or failure of moving
-				imageClick: null, // function (target) {} : target is clicked image
-				preHtml: null, // preButton design html
-				nextHtml: null, // nextButton design html
-				intervalType: 'image' // 'show' is to move imagesBox, 'image' is to move one image.
-			});
 
-			$('#slider3').felixSlider({
-				direction: 'V', // image listing direction V : Vertical, H : Horizental
-				showImageCount: 5, // image view count
-				padding: 2, // padding
-				preClick: null, // function (state) {} : state is success or failure of moving
-				nextClick: null, // function (state) {} : state is success or failure of moving
-				imageClick: null, // function (target) {} : target is clicked image
-				preHtml: null, // preButton design html
-				nextHtml: null, // nextButton design html
-				intervalType: 'show' // 'show' is to move imagesBox, 'image' is to move one image.
-			});
+	<script type="text/javascript" src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/css/bootstrap-responsive.min.css" />
 
-			// felixSlider destroy method
-			// $('#slider1').felixSlider('destroy');
-		});
-	</script>
+	<script type="text/javascript" src="google-code-prettify/prettify.js"></script>
+	<link rel="stylesheet" href="google-code-prettify/prettify.css">
+
+	<script type="text/javascript" src="js/jquery.felixSlider.js"></script>
+	<link rel="stylesheet" href="css/jquery.felixSlider.css" />
+
+	<script type="text/javascript" src="application.js"></script>
+	<link rel="stylesheet" href="application.css" />
 </head>
 <body>
-	<ul id="slider1">
-		<li>
-			<img src="http://www.imagegood.co.kr/web_small/25/20120512153006.jpg" width="150" height="100" />
-		</li>
-		<li>
-			<img src="http://www.imagegood.co.kr/web_small/27/20120512154201.jpg" width="150" height="100" />
-		</li>
-		<li>
-			<img src="http://www.imagegood.co.kr/web_small/25/20120512152933.jpg" width="150" height="100" />
-		</li>
-		<li>
-			<img src="http://www.imagegood.co.kr/web_small/10/20111215063636.jpg" width="150" height="100" />
-		</li>
-		<li>
-			<img src="http://www.imagegood.co.kr/web_small/38/20111207075807.jpg" width="150" height="100" />
-		</li>
-		<li>
-			<img src="http://www.imagegood.co.kr/web_small/9/20111207075543.jpg" width="150" height="100" />
-		</li>
-		<li>
-			<img src="http://www.imagegood.co.kr/web_small/38/20111207074600.jpg" width="150" height="100" />
-		</li>
-		<li>
-			<img src="http://www.imagegood.co.kr/web_small/38/20111207074039.jpg" width="150" height="100" />
-		</li>
-		<li>
-			<img src="http://www.imagegood.co.kr/web_small/13/20111207073337.jpg" width="150" height="100" />
-		</li>
-		<li>
-			<img src="http://www.imagegood.co.kr/web_small/38/20111207072818.jpg" width="150" height="100" />
-		</li>
-		<li>
-			<img src="http://www.imagegood.co.kr/web_small/28/20111129052503.jpg" width="150" height="100" />
-		</li>
-		<li>
-			<img src="http://www.imagegood.co.kr/web_small/26/20111124003350.jpg" width="150" height="100" />
-		</li>
-		<li>
-			<img src="http://www.imagegood.co.kr/web_small/23/20111124001926.jpg" width="150" height="100" />
-		</li>
-		<li>
-			<img src="http://www.imagegood.co.kr/web_small/23/20111124001038.jpg" width="150" height="100" />
-		</li>
-	</ul>
-	<ul id="slider2">
-		<li>
-			<img src="http://www.imagegood.co.kr/web_small/25/20120512153006.jpg" width="150" height="100" />
-		</li>
-		<li>
-			<img src="http://www.imagegood.co.kr/web_small/27/20120512154201.jpg" width="150" height="100" />
-		</li>
-		<li>
-			<img src="http://www.imagegood.co.kr/web_small/25/20120512152933.jpg" width="150" height="100" />
-		</li>
-		<li>
-			<img src="http://www.imagegood.co.kr/web_small/10/20111215063636.jpg" width="150" height="100" />
-		</li>
-		<li>
-			<img src="http://www.imagegood.co.kr/web_small/38/20111207075807.jpg" width="150" height="100" />
-		</li>
-		<li>
-			<img src="http://www.imagegood.co.kr/web_small/9/20111207075543.jpg" width="150" height="100" />
-		</li>
-		<li>
-			<img src="http://www.imagegood.co.kr/web_small/38/20111207074600.jpg" width="150" height="100" />
-		</li>
-		<li>
-			<img src="http://www.imagegood.co.kr/web_small/38/20111207074039.jpg" width="150" height="100" />
-		</li>
-		<li>
-			<img src="http://www.imagegood.co.kr/web_small/13/20111207073337.jpg" width="150" height="100" />
-		</li>
-		<li>
-			<img src="http://www.imagegood.co.kr/web_small/38/20111207072818.jpg" width="150" height="100" />
-		</li>
-		<li>
-			<img src="http://www.imagegood.co.kr/web_small/28/20111129052503.jpg" width="150" height="100" />
-		</li>
-		<li>
-			<img src="http://www.imagegood.co.kr/web_small/26/20111124003350.jpg" width="150" height="100" />
-		</li>
-		<li>
-			<img src="http://www.imagegood.co.kr/web_small/23/20111124001926.jpg" width="150" height="100" />
-		</li>
-		<li>
-			<img src="http://www.imagegood.co.kr/web_small/23/20111124001038.jpg" width="150" height="100" />
-		</li>
-	</ul>
-	<ul id="slider3">
-		<li>
-			<img src="http://www.imagegood.co.kr/web_small/25/20120512153006.jpg" width="150" height="100" />
-		</li>
-		<li>
-			<img src="http://www.imagegood.co.kr/web_small/27/20120512154201.jpg" width="150" height="100" />
-		</li>
-		<li>
-			<img src="http://www.imagegood.co.kr/web_small/25/20120512152933.jpg" width="150" height="100" />
-		</li>
-		<li>
-			<img src="http://www.imagegood.co.kr/web_small/10/20111215063636.jpg" width="150" height="100" />
-		</li>
-		<li>
-			<img src="http://www.imagegood.co.kr/web_small/38/20111207075807.jpg" width="150" height="100" />
-		</li>
-		<li>
-			<img src="http://www.imagegood.co.kr/web_small/9/20111207075543.jpg" width="150" height="100" />
-		</li>
-		<li>
-			<img src="http://www.imagegood.co.kr/web_small/38/20111207074600.jpg" width="150" height="100" />
-		</li>
-		<li>
-			<img src="http://www.imagegood.co.kr/web_small/38/20111207074039.jpg" width="150" height="100" />
-		</li>
-		<li>
-			<img src="http://www.imagegood.co.kr/web_small/13/20111207073337.jpg" width="150" height="100" />
-		</li>
-		<li>
-			<img src="http://www.imagegood.co.kr/web_small/38/20111207072818.jpg" width="150" height="100" />
-		</li>
-		<li>
-			<img src="http://www.imagegood.co.kr/web_small/28/20111129052503.jpg" width="150" height="100" />
-		</li>
-		<li>
-			<img src="http://www.imagegood.co.kr/web_small/26/20111124003350.jpg" width="150" height="100" />
-		</li>
-		<li>
-			<img src="http://www.imagegood.co.kr/web_small/23/20111124001926.jpg" width="150" height="100" />
-		</li>
-		<li>
-			<img src="http://www.imagegood.co.kr/web_small/23/20111124001038.jpg" width="150" height="100" />
-		</li>
-	</ul>
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<button type="button" class="btn btn-navbar" data-toggle="collapse" data-taret=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="brand" href="#">Felix Image Slider</a>
+				<div class="nav-collapse collapse">
+					<ul class="nav">
+						<li><a href="#Overview">Overview</a></li>
+						<li><a href="#Usage">Usage</a></li>
+						<li><a href="#Options">Options</a></li>
+						<li><a href="#Methods">Methods</a></li>
+						<li><a href="#Examples">Examples</a></li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<!-- Header -->
+		<header class="felix subhead" id="Overview">
+			<h1>Felix Image Slider</h1>
+			<p class="lead">This is jQuery-plugin for image slider.</p>
+		</header>
+		<!-- //Header -->
+
+		<!-- Overview -->
+		<section id="Overview" class="section">
+			<div class="page-header">
+				<h1>Felix Image Slider Overview</h1>
+			</div>
+			<div class="row">
+				<div class="span9">
+					<h3>Preview</h3>
+					<ul id="slider1">
+						<li>
+							<img src="img/images1.jpg" width="150" height="100" />
+						</li>
+						<li>
+							<img src="img/images2.jpg" width="150" height="100" />
+						</li>
+						<li>
+							<img src="img/images3.jpg" width="150" height="100" />
+						</li>
+						<li>
+							<img src="img/images4.jpg" width="150" height="100" />
+						</li>
+						<li>
+							<img src="img/images5.jpg" width="150" height="100" />
+						</li>
+						<li>
+							<img src="img/images6.jpg" width="150" height="100" />
+						</li>
+						<li>
+							<img src="img/images7.jpg" width="150" height="100" />
+						</li>
+						<li>
+							<img src="img/images8.jpg" width="150" height="100" />
+						</li>
+						<li>
+							<img src="img/images9.jpg" width="150" height="100" />
+						</li>
+						<li>
+							<img src="img/images10.jpg" width="150" height="100" />
+						</li>
+						<li>
+							<img src="img/images11.jpg" width="150" height="100" />
+						</li>
+					</ul>
+				</div>
+				<div class="span3">
+					<h3>Default Usage</h3>
+					<p>This is image slider.</p>
+					<p>It's easy to use for image slider.</p>
+				</div>
+			</div>
+		</section>
+		<!-- //Overview -->
+
+		<!-- Usage -->
+		<section id="Usage" class="section">
+			<div class="page-header">
+				<h1>Usage</h1>
+			</div>
+			<div class="row">
+				<div class="span4">
+					<div class="row">
+						<div class="span4">
+							<h3>Default Usage</h3>
+							This is default usage.
+						</div>
+					</div>
+					<div class="row">
+						<div class="span4">
+							<h3>Javascript</h3>
+							<pre class="prettyprint">
+
+$('#images').felixSlider();
+							</pre>
+						</div>
+					</div>
+				</div>
+				<div class="span8">
+					<h3>HTML Structure</h3>
+					<pre class="prettyprint">
+
+	&lt;ul id="images"&gt;
+		&lt;li&gt;
+			&lt;img src="img/images1.jpg" width="150" height="100" /&gt;
+		&lt;/li&gt;
+		&lt;li&gt;
+			&lt;img src="img/images2.jpg" width="150" height="100" /&gt;
+		&lt;/li&gt;
+		&lt;li&gt;
+			&lt;img src="img/images3.jpg" width="150" height="100" /&gt;
+		&lt;/li&gt;
+		&lt;li&gt;
+			&lt;img src="img/images4.jpg" width="150" height="100" /&gt;
+		&lt;/li&gt;
+		&lt;li&gt;
+			&lt;img src="img/images5.jpg" width="150" height="100" /&gt;
+		&lt;/li&gt;
+		&lt;li&gt;
+			&lt;img src="img/images6.jpg" width="150" height="100" /&gt;
+		&lt;/li&gt;
+		&lt;li&gt;
+			&lt;img src="img/images7.jpg" width="150" height="100" /&gt;
+		&lt;/li&gt;
+		&lt;li&gt;
+			&lt;img src="img/images8.jpg" width="150" height="100" /&gt;
+		&lt;/li&gt;
+		&lt;li&gt;
+			&lt;img src="img/images9.jpg" width="150" height="100" /&gt;
+		&lt;/li&gt;
+		&lt;li&gt;
+			&lt;img src="img/images10.jpg" width="150" height="100" /&gt;
+		&lt;/li&gt;
+		&lt;li&gt;
+			&lt;img src="img/images11.jpg" width="150" height="100" /&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+					</pre>
+				</div>
+			</div>
+		</section>
+		<!-- //Usage -->
+
+		<!-- Options -->
+		<section id="Options" class="section">
+			<div class="page-header">
+				<h1>Options</h1>
+			</div>
+			<div class="row">
+				<div class="span12">
+					<h3>Create with options</h3>
+					<pre class="prettyprint">
+
+	$('#images').felixSlider({
+		auto: false,				// auto action. true(auto slide) or false(manual slide).
+		autoReverse: false,			// auto direct reverse. true(auto direction reverse) or false(auto direction don't reverse).
+		buttonShow: true,			// button whether show or not. true(show) or false(hide).
+		rolling: false,				// image rolling setting. true(rolling) or false(no rolling).
+		interval: 3000,				// auto move interval time. integer values.
+		duration: 'slow',			// move duration time
+		reverse: false,				// button action reverse. 'slow' or 'fast' or integer values.
+		direction: 'H', 			// image listing direction V : Vertical, H : Horizental
+		showImageCount: 5, 			// image view count
+		padding: 2, 				// padding
+		preClick: null, 			// function (state) {} : state is success or failure of moving
+		nextClick: null, 			// function (state) {} : state is success or failure of moving
+		imageClick: null, 			// function (target) {} : target is clicked image
+		preHtml: null, 				// preButton design html
+		nextHtml: null, 			// nextButton design html
+		intervalType: 'show' 			// 'show' is to move imagesBox, 'image' is to move one image.
+	});
+					</pre>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span12">
+					<h3>Option change of created slider</h3>
+					<pre class="prettyprint">
+	
+	// Getter
+		$('#images').felixSlider('option', 'auto');
+	// Setter
+		$('#images').felixSlider('option', 'auto', true);
+
+	// Getter
+		$('#images').felixSlider('option', 'autoReverse');
+	// Setter
+		$('#images').felixSlider('option', 'autoReverse', true);
+	
+	// Getter
+		$('#images').felixSlider('option', 'buttonShow');
+	// Setter
+		$('#images').felixSlider('option', 'buttonShow', false);
+	
+	// Getter
+		$('#images').felixSlider('option', 'rolling');
+	// Setter
+		$('#images').felixSlider('option', 'rolling', true);
+	
+	// Getter
+		$('#images').felixSlider('option', 'interval');
+	// Setter
+		$('#images').felixSlider('option', 'interval', 1200);
+	
+	// Getter
+		$('#images').felixSlider('option', 'duration');
+	// Setter
+		$('#images').felixSlider('option', 'duration', 'fast');
+	
+	// Getter
+		$('#images').felixSlider('option', 'reverse');
+	// Setter
+		$('#images').felixSlider('option', 'reverse', true);
+	
+	// Getter
+		$('#images').felixSlider('option', 'direction');
+	// Setter
+		$('#images').felixSlider('option', 'direction', 'V');
+	
+	// Getter
+		$('#images').felixSlider('option', 'showImageCount');
+	// Setter
+		$('#images').felixSlider('option', 'showImageCount', 3);
+	
+	// Getter
+		$('#images').felixSlider('option', 'padding');
+	// Setter
+		$('#images').felixSlider('option', 'padding', 0);
+	
+	// Getter
+		$('#images').felixSlider('option', 'preClick');
+	// Setter
+		$('#images').felixSlider('option', 'preClick', function(state){ ... });
+	
+	// Getter
+		$('#images').felixSlider('option', 'nextClick');
+	// Setter
+		$('#images').felixSlider('option', 'nextClick', function(state){ ... });
+	
+	// Getter
+		$('#images').felixSlider('option', 'imageClick');
+	// Setter
+		$('#images').felixSlider('option', 'imageClick', function(target){ ... });
+	
+	// Getter
+		$('#images').felixSlider('option', 'preHtml');
+	// Setter
+		$('#images').felixSlider('option', 'preHtml', '<');
+	
+	// Getter
+		$('#images').felixSlider('option', 'nextHtml');
+	// Setter
+		$('#images').felixSlider('option', 'nextHtml', '>');
+	
+	// Getter
+		$('#images').felixSlider('option', 'intervalType');
+	// Setter
+		$('#images').felixSlider('option', 'intervalType', 'image');
+					</pre>
+				</div>
+			</div>
+		</section>
+		<!--//Options -->
+
+		<!-- Methods -->
+		<section id="Methods" class="section">
+			<div class="page-header">
+				<h1>Methods</h1>
+			</div>
+			<div class="row">
+				<div class="span12">
+					<h3>You can call methods of created slider.</h3>
+					<pre class="prettyprint">
+
+	// Next event method
+	$('#images').felixSlider('next');
+
+	// Previous event method
+	$('#images').felixSlider('previous');
+
+	// Destroy method
+	$('#images').felixSlider('destroy');
+					</pre>
+				</div>
+			</div>
+		</section>
+		<!-- //Methods -->
+
+		<!-- Examples -->
+		<section id="Examples" class="section">
+			<div class="page-header">
+				<h1>Examples</h1>
+			</div>
+			<div class="row">
+				<div class="span9">
+					<h3>Default</h3>
+						<ul id="example1">
+							<li>
+								<img src="img/images1.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images2.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images3.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images4.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images5.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images6.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images7.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images8.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images9.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images10.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images11.jpg" width="150" height="100" />
+							</li>
+						</ul>
+				</div>
+				<div class="span3">
+					<h3>Options</h3>
+	<pre class="prettyprint">
+
+$('#images').felixSlider();
+	</pre>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span9">
+					<h3>Auto moving and rolling</h3>
+						<ul id="example2">
+							<li>
+								<img src="img/images1.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images2.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images3.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images4.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images5.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images6.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images7.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images8.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images9.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images10.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images11.jpg" width="150" height="100" />
+							</li>
+						</ul>
+				</div>
+				<div class="span3">
+					<h3>Options</h3>
+	<pre class="prettyprint">
+
+$('#images').felixSlider({
+	auto: true,
+	rolling: true
+});
+	</pre>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span9">
+					<h3>Reverse auto moving and rolling</h3>
+						<ul id="example3">
+							<li>
+								<img src="img/images1.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images2.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images3.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images4.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images5.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images6.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images7.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images8.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images9.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images10.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images11.jpg" width="150" height="100" />
+							</li>
+						</ul>
+				</div>
+				<div class="span3">
+					<h3>Options</h3>
+	<pre class="prettyprint">
+
+$('#images').felixSlider({
+	auto: true,
+	autoReverse: true,
+	rolling: true
+});
+	</pre>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span9">
+					<h3>Change moving image</h3>
+						<ul id="example4">
+							<li>
+								<img src="img/images1.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images2.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images3.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images4.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images5.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images6.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images7.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images8.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images9.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images10.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images11.jpg" width="150" height="100" />
+							</li>
+						</ul>
+				</div>
+				<div class="span3">
+					<h3>Options</h3>
+	<pre class="prettyprint">
+
+$('#images').felixSlider({
+	auto: true,
+	rolling: true,
+	intervalType: 'image'
+});
+	</pre>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span9">
+					<h3>Change image count of showing</h3>
+						<ul id="example5">
+							<li>
+								<img src="img/images1.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images2.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images3.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images4.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images5.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images6.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images7.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images8.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images9.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images10.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images11.jpg" width="150" height="100" />
+							</li>
+						</ul>
+				</div>
+				<div class="span3">
+					<h3>Options</h3>
+	<pre class="prettyprint">
+
+$('#images').felixSlider({
+	auto: true,
+	rolling: true,
+	showImageCount: 3
+});
+	</pre>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span9">
+					<h3>Padding</h3>
+						<ul id="example6">
+							<li>
+								<img src="img/images1.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images2.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images3.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images4.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images5.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images6.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images7.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images8.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images9.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images10.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images11.jpg" width="150" height="100" />
+							</li>
+						</ul>
+				</div>
+				<div class="span3">
+					<h3>Options</h3>
+	<pre class="prettyprint">
+
+$('#images').felixSlider({
+	auto: true,
+	rolling: true,
+	padding: 0
+});
+	</pre>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span9">
+					<h3>Moving direction</h3>
+						<ul id="example7">
+							<li>
+								<img src="img/images1.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images2.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images3.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images4.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images5.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images6.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images7.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images8.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images9.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images10.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images11.jpg" width="150" height="100" />
+							</li>
+						</ul>
+				</div>
+				<div class="span3">
+					<h3>Options</h3>
+	<pre class="prettyprint">
+
+$('#images').felixSlider({
+	auto: true,
+	rolling: true,
+	direction: 'V'
+});
+	</pre>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span8">
+					<h3>Button hide and external button action.</h3>
+						<ul id="example8">
+							<li>
+								<img src="img/images1.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images2.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images3.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images4.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images5.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images6.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images7.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images8.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images9.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images10.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images11.jpg" width="150" height="100" />
+							</li>
+						</ul>
+						<br />
+						<button class="btn btn-primary" id="ex8-pre">Previous</button>
+						<button class="btn btn-primary" id="ex8-next">Next</button>
+				</div>
+				<div class="span4">
+					<h3>Options</h3>
+	<pre class="prettyprint">
+
+$('#images').felixSlider({
+	auto: true,
+	rolling: true,
+	showImageCount: 3,
+	buttonShow: false
+});
+$('#previous').click(function (){
+	$('#images').felixSlider('previous');
+});
+$('#next').click(function (){
+	$('#images').felixSlider('next');
+});
+	</pre>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span8">
+					<h3>Image click event</h3>
+						<ul id="example9">
+							<li>
+								<img src="img/images1.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images2.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images3.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images4.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images5.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images6.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images7.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images8.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images9.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images10.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images11.jpg" width="150" height="100" />
+							</li>
+						</ul>
+					<p>Selected Image</p>
+					<div id="ex9-preview"></div>
+				</div>
+				<div class="span4">
+					<h3>Options</h3>
+	<pre class="prettyprint">
+
+$('#images').felixSlider({
+	auto: true,
+	rolling: true,
+	showImageCount: 3,
+	imageClick: function (target){
+		$('#preview').empty();
+		$('#preview').append(target);
+	}
+});
+	</pre>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span8">
+					<h3>One image slide</h3>
+						<ul id="example10">
+							<li>
+								<img src="img/images1.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images2.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images3.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images4.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images5.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images6.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images7.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images8.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images9.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images10.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<img src="img/images11.jpg" width="150" height="100" />
+							</li>
+						</ul>
+				</div>
+				<div class="span4">
+					<h3>Options</h3>
+	<pre class="prettyprint">
+
+$('#images').felixSlider({
+	auto: true,
+	rolling: true,
+	showImageCount: 1,
+	buttonShow: false,
+	padding: 0
+});
+	</pre>
+				</div>
+			</div>
 </body>
 </html>
