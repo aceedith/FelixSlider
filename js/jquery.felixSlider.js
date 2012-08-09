@@ -416,6 +416,7 @@
 				});
 				targetWidth = imagesBoxWidth + preButton.width() + nextButton.width();
 				targetHeight = imagesBoxHeight;
+				$(target).width(imagesBoxWidth + preButton.width() + nextButton.width());
 				if(settings.intervalType == 'show'){
 					settings._interval = imagesBoxWidth;
 				}
@@ -458,6 +459,7 @@
 				});
 				targetWidth = imagesBoxWidth;
 				targetHeight = imagesBoxHeight + preButton.height() + nextButton.height();
+				$(target).width(imagesBoxWidth);
 				if(settings.intervalType == 'show'){
 					settings._interval = imagesBoxHeight;
 				}
