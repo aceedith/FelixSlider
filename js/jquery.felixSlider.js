@@ -1,7 +1,7 @@
 (function ($, undefined){
 	var PROP_NAME = 'FelixSlider';
 	var director = 'Felix Sungchul Kang';
-	var version = '1.1';
+	var version = '1.02';
 	var base = 'jquery-1.7.2';
 
 	function FelixSlider(){
@@ -21,6 +21,8 @@
 			_userCallBack: null,		// user's callback function.
 			_currentEvent: null,		// click or previous or next.
 			_backState: false,			// back action state.
+			extraWidth: 0,				// Extra width.
+			extraHeight: 0,				// Extra height.
 			auto: false,				// auto action. true(auto slide) or false(manual slide).
 			autoReverse: false,			// auto direct reverse. true(auto direction reverse) or false(auto direction don't reverse).
 			buttonShow: true,			// button whether show or not. true(show) or false(hide).
@@ -373,10 +375,13 @@
 			var imageWidth = 0;
 			var imageHeight = 0;
 
+			li.width(li.width() + settings.extraWidth);
+			li.height(li.height() + settings.extraHeight);
+
 			if(settings.direction == 'H'){
 				li.addClass('felix-float');
-				imagesBoxWidth = (image.width() * settings.showImageCount) + (settings.showImageCount * settings.padding) * 2;
-				imagesBoxHeight = image.height();
+				imagesBoxWidth = (li.width() * settings.showImageCount) + (settings.showImageCount * settings.padding) * 2;
+				imagesBoxHeight = li.height();
 				imagesWidth = (image.width() * li.length) + (li.length * settings.padding) * 2;
 				imagesHeight = imagesBoxHeight;
 				imageWidth = image.width();
@@ -419,8 +424,8 @@
 				}
 			}
 			else if(settings.direction == 'V'){
-				imagesBoxWidth = image.width();
-				imagesBoxHeight = (image.height() * settings.showImageCount) + (settings.showImageCount * settings.padding) * 2;
+				imagesBoxWidth = li.width();
+				imagesBoxHeight = (li.height() * settings.showImageCount) + (settings.showImageCount * settings.padding) * 2;
 				imagesWidth = imagesBoxWidth;
 				imagesHeight = (image.height() * li.length) + (li.length * settings.padding) * 2;
 				imageWidth = image.width();
@@ -446,8 +451,8 @@
 					});
 				}
 				li.css({
-					width: imageWidth,
-					height: imageHeight,
+					// width: imageWidth,
+					// height: imageHeight,
 					paddingTop: settings.padding,
 					paddingRight: 0,
 					paddingBottom: settings.padding,

@@ -181,6 +181,8 @@ $('#images').felixSlider();
 					<pre class="prettyprint">
 
 	$('#images').felixSlider({
+		extraWidth: 0,				// Extra width.
+		extraHeight: 0,				// Extra height.
 		auto: false,				// auto action. true(auto slide) or false(manual slide).
 		autoReverse: false,			// auto direct reverse. true(auto direction reverse) or false(auto direction don't reverse).
 		buttonShow: true,			// button whether show or not. true(show) or false(hide).
@@ -206,6 +208,16 @@ $('#images').felixSlider();
 					<h3>Option change of created slider</h3>
 					<pre class="prettyprint">
 	
+	// Getter
+		$('#images').felixSlider('option', 'extraWidth');
+	// Setter
+		$('#images').felixSlider('option', 'extraWidth', 10);
+
+	// Getter
+		$('#images').felixSlider('option', 'extraHeight');
+	// Setter
+		$('#images').felixSlider('option', 'extraHeight', 10);
+
 	// Getter
 		$('#images').felixSlider('option', 'auto');
 	// Setter
@@ -825,6 +837,92 @@ $('#images').felixSlider({
 								<img src="img/images10.jpg" width="150" height="100" />
 							</li>
 							<li>
+								<img src="img/images11.jpg" width="150" height="100" />
+							</li>
+						</ul>
+				</div>
+				<div class="span4">
+					<h3>Options</h3>
+	<pre class="prettyprint">
+
+$('#images').felixSlider({
+	auto: true,
+	rolling: true,
+	showImageCount: 1,
+	buttonShow: false,
+	padding: 0
+});
+	</pre>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span8">
+					<h3>One image slide and extra some text</h3>
+						<ul id="example11">
+							<li>
+								<div>
+									<h3>test111</h3>
+								</div>
+								<img src="img/images1.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<div>
+									<h3>test111</h3>
+								</div>
+								<img src="img/images2.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<div>
+									<h3>test111</h3>
+								</div>
+								<img src="img/images3.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<div>
+									<h3>test111</h3>
+								</div>
+								<img src="img/images4.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<div>
+									<h3>test111</h3>
+								</div>
+								<img src="img/images5.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<div>
+									<h3>test111</h3>
+								</div>
+								<img src="img/images6.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<div>
+									<h3>test111</h3>
+								</div>
+								<img src="img/images7.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<div>
+									<h3>test111</h3>
+								</div>
+								<img src="img/images8.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<div>
+									<h3>test111</h3>
+								</div>
+								<img src="img/images9.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<div>
+									<h3>test111</h3>
+								</div>
+								<img src="img/images10.jpg" width="150" height="100" />
+							</li>
+							<li>
+								<div>
+									<h3>test111</h3>
+								</div>
 								<img src="img/images11.jpg" width="150" height="100" />
 							</li>
 						</ul>

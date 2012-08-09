@@ -64,5 +64,13 @@ $(function (){
 		buttonShow: false,
 		padding: 0
 	});
+	$('#example11').felixSlider({
+		auto: true,
+		rolling: true,
+		showImageCount: 1,
+		buttonShow: false,
+		direction: 'V',
+		padding: 0
+	});
 
 });
