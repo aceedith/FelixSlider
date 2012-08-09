@@ -72,4 +72,8 @@ $(function (){
 		direction: 'V',
 		padding: 0
 	});
+	$('ul.nav').on('click.active', 'li', function (){
+		$(this).parent().children().removeClass('active');
+		$(this).addClass('active');
+	});
 });
