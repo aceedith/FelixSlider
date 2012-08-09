@@ -76,4 +76,7 @@ $(function (){
 		$(this).parent().children().removeClass('active');
 		$(this).addClass('active');
 	});
+	$('.brand').click(function (){
+		$('ul.nav').children().removeClass('active');
+	});
 });
