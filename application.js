@@ -72,5 +72,4 @@ $(function (){
 		direction: 'V',
 		padding: 0
 	});
-
 });
