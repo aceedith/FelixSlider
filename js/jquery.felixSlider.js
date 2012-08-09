@@ -451,8 +451,6 @@
 					});
 				}
 				li.css({
-					// width: imageWidth,
-					// height: imageHeight,
 					paddingTop: settings.padding,
 					paddingRight: 0,
 					paddingBottom: settings.padding,
