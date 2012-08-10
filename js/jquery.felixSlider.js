@@ -421,7 +421,7 @@
 					settings._interval = imagesBoxWidth;
 				}
 				else if(settings.intervalType == 'image'){
-					settings._interval = image.width() + settings.padding * 2;
+					settings._interval = imagesBoxWidth / settings.showImageCount;
 				}
 			}
 			else if(settings.direction == 'V'){
@@ -464,7 +464,7 @@
 					settings._interval = imagesBoxHeight;
 				}
 				else if(settings.intervalType == 'image'){
-					settings._interval = image.height() + settings.padding * 2;
+					settings._interval = imagesBoxHeight / settings.showImageCount;
 				}
 			}
 
