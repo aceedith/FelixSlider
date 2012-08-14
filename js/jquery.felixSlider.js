@@ -27,6 +27,7 @@
 			autoReverse: false,			// auto direct reverse. true(auto direction reverse) or false(auto direction don't reverse).
 			buttonShow: true,			// button whether show or not. true(show) or false(hide).
 			rolling: false,				// image rolling setting. true(rolling) or false(no rolling).
+			rollingCopy: true,			// if image count few than showImageCount, same images copy more than showImageCount * 2. if this option is false, it doesn't rolling.
 			interval: 3000,				// auto move interval time. integer values.
 			duration: 'slow',			// move duration time
 			reverse: false,				// button action reverse. 'slow' or 'fast' or integer values.
@@ -113,6 +114,7 @@
 			var slider = this._wrapping(target, inst.settings);
 			$.data(target, PROP_NAME, inst);
 
+			this._imagesSetup(target, inst.settings);
 			this._cssSettings(slider, inst.settings);
 			this._eventsSettings(slider, inst.settings);
 			this._autoSetting(target, inst.settings);
@@ -120,6 +122,14 @@
 			inst.felixSlider = this;
 
 			this._curInst = inst;
+		},
+		_imagesSetup: function (target, settings){
+			var images = $(target);
+			if(images.children().length < settings.showImageCount * 2 && settings.rollingCopy){
+				while(images.children().length < settings.showImageCount * 2){
+					images.append(images.html());
+				}
+			}
 		},
 		_eventsSettings: function (target, settings){
 			var preButton = $(target).find('.felix-pre-button');
@@ -158,7 +168,7 @@
 				var state = false;
 				var imageCount = $(target).find('img').length;
 				var maxCursor = settings.intervalType == 'show' ? Math.ceil(imageCount / settings.showImageCount) : settings.reverse ? imageCount + settings.showImageCount - 1 : imageCount;
-				var pass = settings.rolling ? settings.rolling : settings.reverse ? settings._cursor < maxCursor : settings._cursor > 1;
+				var pass = settings.rolling ? $(target).children().length < settings.showImageCount * 2 ? false : true : settings.reverse ? settings._cursor < maxCursor : settings._cursor > 1;
 
 				settings._currentEvent = 'previous';
 
@@ -189,7 +199,7 @@
 				var state = false;
 				var imageCount = $(target).find('img').length;
 				var maxCursor = settings.intervalType == 'show' ? Math.ceil(imageCount / settings.showImageCount) : settings.reverse ? imageCount : imageCount + settings.showImageCount - 1;
-				var pass = settings.rolling ? settings.rolling : settings.reverse ? settings._cursor > 1 : settings._cursor < maxCursor;
+				var pass = settings.rolling ? $(target).children().length < settings.showImageCount * 2 ? false : true : settings.reverse ? settings._cursor > 1 : settings._cursor < maxCursor;
 
 				settings._currentEvent = 'next';
 
