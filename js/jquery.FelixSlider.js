@@ -494,7 +494,6 @@
 			ul.addClass('felix-ul');
 			li.addClass('felix-li');
 			li.find('img').addClass('felix-img');
-			console.log(imagesWidth, imagesHeight);
 			ul.css({
 				width: imagesWidth,
 				height: imagesHeight
