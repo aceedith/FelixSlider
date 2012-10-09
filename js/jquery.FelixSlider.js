@@ -1,7 +1,7 @@
 (function ($, undefined){
 	var PROP_NAME = 'FelixSlider';
 	var director = 'Felix Sungchul Kang';
-	var version = '1.02';
+	var version = '1.03';
 	var base = 'jquery-1.7.2';
 
 	function FelixSlider(){
@@ -388,21 +388,22 @@
 			var liHeight = 0;
 
 			li.first().children().each(function (){
-				liWidth += $(this).outerWidth();
-				liHeight += $(this).outerHeight();
+				liHeight += $(this).outerHeight(true);
+				console.log(this, liHeight)
 			});
+			liWidth = image.outerWidth(true);
 			li.width(liWidth + settings.extraWidth);
 			li.height(liHeight + settings.extraHeight);
 
 			if(settings.direction == 'H'){
 
 				li.addClass('felix-float');
-				imagesBoxWidth = (li.width() * settings.showImageCount) + (settings.showImageCount * settings.padding) * 2;
-				imagesBoxHeight = li.height();
-				imagesWidth = (image.width() * li.length) + (li.length * settings.padding) * 2;
+				imagesBoxWidth = (li.outerWidth(true) * settings.showImageCount) + (settings.showImageCount * settings.padding) * 2;
+				imagesBoxHeight = li.outerHeight(true);
+				imagesWidth = (image.outerWidth(true) * li.length) + (li.length * settings.padding) * 2;
 				imagesHeight = imagesBoxHeight;
-				imageWidth = image.width();
-				imageHeight = image.height();
+				imageWidth = image.outerWidth(true);
+				imageHeight = image.outerHeight(true);
 				if(!settings.preHtml){
 					preButton.html('pre');
 					preButton.css({
@@ -429,9 +430,9 @@
 					paddingBottom: 0,
 					paddingLeft: settings.padding
 				});
-				targetWidth = imagesBoxWidth + preButton.width() + nextButton.width();
+				targetWidth = imagesBoxWidth + preButton.outerWidth(true) + nextButton.outerWidth(true);
 				targetHeight = imagesBoxHeight;
-				$(target).width(imagesBoxWidth + preButton.width() + nextButton.width());
+				$(target).width(imagesBoxWidth + preButton.outerWidth(true) + nextButton.outerWidth(true));
 				if(settings.intervalType == 'show'){
 					settings._interval = imagesBoxWidth;
 				}
@@ -440,12 +441,13 @@
 				}
 			}
 			else if(settings.direction == 'V'){
-				imagesBoxWidth = li.width();
-				imagesBoxHeight = (li.height() * settings.showImageCount) + (settings.showImageCount * settings.padding) * 2;
+				imagesBoxWidth = li.outerWidth(true);
+				imagesBoxHeight = (li.outerHeight(true) * settings.showImageCount) + (settings.showImageCount * settings.padding) * 2;
 				imagesWidth = imagesBoxWidth;
-				imagesHeight = (image.height() * li.length) + (li.length * settings.padding) * 2;
-				imageWidth = image.width();
-				imageHeight = image.height();
+				imagesHeight = (image.outerHeight(true) * li.length) + (li.length * settings.padding) * 2;
+				imageWidth = image.outerWidth(true);
+				imageHeight = image.outerHeight(true);
+
 				if(!settings.preHtml){
 					preButton.html('pre');
 					preButton.css({
@@ -473,7 +475,7 @@
 					paddingLeft: 0
 				});
 				targetWidth = imagesBoxWidth;
-				targetHeight = imagesBoxHeight + preButton.height() + nextButton.height();
+				targetHeight = imagesBoxHeight + preButton.outerHeight(true) + nextButton.outerHeight(true);
 				$(target).width(imagesBoxWidth);
 				if(settings.intervalType == 'show'){
 					settings._interval = imagesBoxHeight;
