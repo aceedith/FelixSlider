@@ -1,7 +1,7 @@
 (function ($, undefined){
 	var PROP_NAME = 'FelixSlider';
 	var director = 'Felix Sungchul Kang';
-	var version = '1.03';
+	var version = '1.03/';
 	var base = 'jquery-1.7.2';
 
 	function FelixSlider(){
@@ -389,7 +389,6 @@
 
 			li.first().children().each(function (){
 				liHeight += $(this).outerHeight(true);
-				console.log(this, liHeight)
 			});
 			liWidth = image.outerWidth(true);
 			li.width(liWidth + settings.extraWidth);
