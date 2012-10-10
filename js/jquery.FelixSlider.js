@@ -1,7 +1,7 @@
 (function ($, undefined){
 	var PROP_NAME = 'FelixSlider';
 	var director = 'Felix Sungchul Kang';
-	var version = '1.03/';
+	var version = '1.04';
 	var base = 'jquery-1.7.2';
 
 	function FelixSlider(){
@@ -125,7 +125,7 @@
 		},
 		_imagesSetup: function (target, settings){
 			var images = $(target);
-			if(images.children().length < settings.showImageCount * 2 && settings.rollingCopy){
+			if(images.children().length < settings.showImageCount * 2 && settings.rolling && settings.rollingCopy){
 				while(images.children().length < settings.showImageCount * 2){
 					images.append(images.html());
 				}
@@ -503,7 +503,6 @@
 		_wrapping: function (target, settings){
 			$(target).wrap('<div class="felix-slider"><div class="felix-images-box"></div></div>');
 			var wrapper = $(target).parent().parent();
-
 			if(settings.buttonShow){
 				wrapper.prepend('<div class="felix-button felix-pre-button"></div>');
 				wrapper.append('<div class="felix-button felix-next-button"></div>');
